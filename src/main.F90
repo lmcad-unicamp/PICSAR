@@ -75,6 +75,9 @@ PROGRAM main
   CHARACTER(len=250) :: str1, str2, str3
   CHARACTER(len=250) :: str4, str5, str7
   CHARACTER(len=500) :: str6
+
+  CALL init_timestep
+
 ! Intel Design Forward project
 #if defined(DFP)
   CALL DFP_INIT_START
@@ -184,6 +187,7 @@ PROGRAM main
     ENDIF
   ENDIF
 #endif
+  CALL end_timestep
   CALL mpi_close
 
 ! Intel Design Forward project

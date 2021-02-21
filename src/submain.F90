@@ -102,6 +102,7 @@ USE sorting
     rhoold=0.0_num
     rho = 0.0_num
     DO i=1, nst
+      CALL begin_timestep
       IF (rank .EQ. 0) startit=MPI_WTIME()
 
       !!! --- Init iteration variables
@@ -192,6 +193,7 @@ USE sorting
         WRITE(0, *) 'it = ', it, ' || time = ', it*dt, " || push/part (ns)= ",        &
         pushtime*1e9_num/ntot, " || tot/part (ns)= ", (timeit-startit)*1e9_num/ntot
       END IF
+      CALL end_timestep
     END DO
 
     ! ___________________________________________
@@ -199,6 +201,7 @@ USE sorting
   ELSE IF (c_dim.eq.2) THEN
 
     DO i=1, nst
+      CALL begin_timestep
       IF (rank .EQ. 0) startit=MPI_WTIME()
 
       !!! --- Init iteration variables
@@ -282,6 +285,7 @@ USE sorting
         WRITE(0, *) 'it = ', it, ' || time = ', it*dt, " || push/part (ns)= ",        &
         pushtime*1e9_num/ntot, " || tot/part (ns)= ", (timeit-startit)*1e9_num/ntot
       END IF
+      CALL end_timestep
     END DO
 
   ENDIF

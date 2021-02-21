@@ -425,7 +425,7 @@ build:$(SRCDIR)/modules/modules.o \
 	$(SRCDIR)/submain.o \
 	$(SRCDIR)/initialization/control_file.o \
 	$(SRCDIR)/main.o
-	$(FC) $(FARGS) -o $(APPNAME) $(SRCDIR)/*.o $(SRCDIR)/*/*.o $(SRCDIR)/*/*/*.o $(SRCDIR)/*/*/*/*.o $(LDFLAGS)
+	$(FC) $(FARGS) -o $(APPNAME) $(SRCDIR)/*.o $(SRCDIR)/*/*.o $(SRCDIR)/*/*/*.o $(SRCDIR)/*/*/*/*.o $(LDFLAGS) ../kernel_stats./kernel_stats.o
 	mkdir -p $(BINDIR)
 	mv $(APPNAME) $(BINDIR)
 else ifeq ($(MODE),sde)
@@ -473,7 +473,7 @@ build:$(SRCDIR)/modules/modules.o \
 	$(SRCDIR)/submain.o \
 	$(SRCDIR)/initialization/control_file.o \
 	$(SRCDIR)/main.o
-	$(FC) $(FARGS) -o $(APPNAME) $(SRCDIR)/*.o $(SRCDIR)/*/*.o $(SRCDIR)/*/*/*.o $(SRCDIR)/*/*/*/*.o $(LDFLAGS)
+	$(FC) $(FARGS) -o $(APPNAME) $(SRCDIR)/*.o $(SRCDIR)/*/*.o $(SRCDIR)/*/*/*.o $(SRCDIR)/*/*/*/*.o $(LDFLAGS) ../kernel_stats./kernel_stats.o
 	mkdir -p $(BINDIR)
 	mv $(APPNAME) $(BINDIR)
 else ifeq ($(MODE),$(filter $(MODE),prod_spectral debug_spectral))
@@ -525,7 +525,7 @@ build:$(SRCDIR)/modules/modules.o \
 	$(SRCDIR)/submain.o \
 	$(SRCDIR)/initialization/control_file.o \
 	$(SRCDIR)/main.o
-	$(FC) $(FARGS) -o $(APPNAME) $(SRCDIR)/*.o $(SRCDIR)/*/*.o $(SRCDIR)/*/*/*.o $(SRCDIR)/*/*/*/*.o $(LDFLAGS)
+	$(FC) $(FARGS) -o $(APPNAME) $(SRCDIR)/*.o $(SRCDIR)/*/*.o $(SRCDIR)/*/*/*.o $(SRCDIR)/*/*/*/*.o $(LDFLAGS) ../kernel_stats./kernel_stats.o
 	mkdir -p $(BINDIR)
 	mv $(APPNAME) $(BINDIR)
 else
@@ -572,7 +572,7 @@ build:$(SRCDIR)/modules/modules.o \
 	$(SRCDIR)/submain.o \
 	$(SRCDIR)/initialization/control_file.o \
 	$(SRCDIR)/main.o
-	$(FC) $(FARGS) -o $(APPNAME) $(SRCDIR)/*.o $(SRCDIR)/*/*.o $(SRCDIR)/*/*/*.o $(SRCDIR)/*/*/*/*.o
+	$(FC) $(FARGS) -o $(APPNAME) $(SRCDIR)/*.o $(SRCDIR)/*/*.o $(SRCDIR)/*/*/*.o $(SRCDIR)/*/*/*/*.o ../kernel_stats/kernel_stats.o
 	mkdir -p $(BINDIR)
 	mv $(APPNAME) $(BINDIR)
 endif
