@@ -572,7 +572,7 @@ build:$(SRCDIR)/modules/modules.o \
 	$(SRCDIR)/submain.o \
 	$(SRCDIR)/initialization/control_file.o \
 	$(SRCDIR)/main.o
-	$(FC) $(FARGS) -o $(APPNAME) $(SRCDIR)/*.o $(SRCDIR)/*/*.o $(SRCDIR)/*/*/*.o $(SRCDIR)/*/*/*/*.o ../kernel_stats/kernel_stats.o
+	$(FC) $(FARGS) -o $(APPNAME) $(SRCDIR)/*.o $(SRCDIR)/*/*.o $(SRCDIR)/*/*/*.o $(SRCDIR)/*/*/*/*.o ../../utils/kernel_stats.o
 	mkdir -p $(BINDIR)
 	mv $(APPNAME) $(BINDIR)
 endif
