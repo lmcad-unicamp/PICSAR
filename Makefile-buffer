@@ -51,14 +51,11 @@ CC=mpicc
 CPP=mpic++
 
 # Fortran compiler arguments
-#FARGS= -g -fbounds-check -O3 -fopenmp -JModules
-FARGS= -g -fbounds-check -O3 -lgomp -JModules
+FARGS= -g -fbounds-check -O3 -fopenmp -JModules
 # C compiler Arguments
-#CARGS= -g -O3 -fopenmp
-CARGS= -g -O3 -lgomp
+CARGS= -g -O3 -fopenmp
 # C++ compiler Arguments
-#CPPARGS= -g -O3 -fopenmp
-CPPARGS= -g -O3 -lgomp
+CPPARGS= -g -O3 -fopenmp
 
 # External libs
 FFTW3_LIB=/usr/lib/x86_64-linux-gnu
@@ -261,8 +258,7 @@ ifeq ($(COMP),gnu)
 
   ifeq ($(MODE),prod)
 	  FC=mpif90
-	  #FARGS= -O3 -fopenmp -JModules -ftree-vectorize
-	  FARGS= -O3 -lgomp -JModules -ftree-vectorize
+	  FARGS= -O3 -fopenmp -JModules -ftree-vectorize
 	  #-ftree-vectorize -ffast-math -ftree-vectorizer-verbose=2 -fopt-info
 	  #FARGS=-g
 	else ifeq ($(MODE),debug)
