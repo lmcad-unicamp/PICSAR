@@ -187,7 +187,7 @@ PROGRAM main
     ENDIF
   ENDIF
 #endif
-  CALL end_timestep
+  CALL exit_timestep
   CALL mpi_close
 
 ! Intel Design Forward project
