@@ -195,6 +195,7 @@ USE sorting
       END IF
       CALL end_timestep
     END DO
+    CALL after_timestep
 
     ! ___________________________________________
     ! Loop in 2D
@@ -287,6 +288,7 @@ USE sorting
       END IF
       CALL end_timestep
     END DO
+    CALL after_timestep
 
   ENDIF
 
