@@ -1,7 +1,7 @@
 ######################### INPUT FILE FOR THE CODE PICSAR
 section::cpusplit
- nprocx =4
- nprocy =4  
+ nprocx =1
+ nprocy =1  
  nprocz =1 
  c_dim =2
  topology = 0
@@ -25,9 +25,9 @@ end::cpusplit
 
 section::main
  # Number of grid points in x,y,z
- nx = 200
- ny = 1
- nz = 200
+ nx = 2500
+ ny = 2500
+ nz = 2500
 
  # Origin of simulation axes
  xmin = -1e-5
